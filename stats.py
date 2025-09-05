@@ -16,3 +16,19 @@ def num_chars(book_content):
                 chars_dict[char] += 1
 
     return chars_dict
+
+
+def sort_list(chars_dict):
+    list_dict = []
+    for char in chars_dict:
+        split_dict = {}
+        split_dict["char"] = char
+        split_dict["num"] = chars_dict[char]
+        list_dict.append(split_dict)
+
+    def sort_on(items):
+        return items["num"]
+
+    list_dict.sort(reverse=True, key=sort_on)
+
+    return list_dict
